@@ -1,0 +1,216 @@
+:root{
+    --backgroundColor:#f2f2f2;
+    --whiteColor:#fff;
+    --BoxShadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    --contentBgColor: #04AA6D;
+    --ParaColor: #535151;
+    --fbColor:#3b5999;
+    --twcolor: #46c1f6;
+    --insColor: #e1306c;
+    --lindColor: #2a6cbb;
+    --whatsColor: #25D366;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.outer{
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#switch:checked ~ .outer{
+    background-color: var(--contentBgColor);
+}
+
+.outer .content{
+    display: flex;
+    position: relative;
+    max-width: 570px;
+    background: var(--whiteColor);
+    box-shadow: var(--BoxShadow);
+    padding: 15px;
+    border-radius: 12px;
+    /* border: 1px solid blueviolet; */
+}
+
+#switch:checked ~ .outer .content{
+    background: var(--contentBgColor);
+}
+
+.content .toggle{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    width: 40px;
+    height: 20px;
+    border-radius: 12px;
+    padding: 3px;
+    background-color: var(--contentBgColor);
+    cursor: pointer;
+}
+
+#switch:checked ~ .outer .content .toggle{
+    background-color: var(--whiteColor);
+}
+
+.content .toggle .circle{
+    height: 16px;
+    width: 16px;
+    background: var(--whiteColor);
+    border-radius: 50%;
+    /* margin-left: 3px; */
+    transition: all 0.3s ease;
+
+}
+
+#switch:checked ~ .outer .circle{
+    margin-left: 18px;
+    background: var(--contentBgColor);
+}
+
+.content .image-div{
+    height: 232px;
+    width: 200px;
+    border-radius: 12px;
+    background: var(--contentBgColor);
+    padding: 3px;
+    cursor: pointer;
+}
+
+#switch:checked ~ .outer .content .image-div{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.22);
+}
+
+.content .image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid var(--whiteColor);
+
+}
+
+#switch:checked ~ .outer .content .image-div img{
+    border-color: transparent;
+}
+
+.content .details{
+    width: 58%;
+    margin: 10px 0px 20px 20px;
+}
+
+#switch:checked ~ .outer .content .details{
+    color: var(--whiteColor);
+}
+
+.content .details .name{
+    font-size: 23px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* color: var(--contentBgColor); */
+    /* text-shadow: var(--BoxShadow); */
+}
+
+.content .details .job{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: var(--contentBgColor);
+    /* text-shadow: var(--BoxShadow); */
+}
+
+#switch:checked ~ .outer .content .details .job{
+    color: var(--backgroundColor);
+}
+
+.content .details p{
+    font-size: 16px;
+    margin-top: 16px;
+    color: var(--ParaColor);
+}
+
+#switch:checked ~ .outer .content .details p{
+    color: var(--whiteColor);
+}
+
+.content .details button{
+    display: block;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    background-color: var(--contentBgColor);
+    color: var(--whiteColor);
+    margin-top: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#switch:checked ~ .outer .content .details button{
+    background-color: var(--whiteColor);
+    color: var(--contentBgColor);
+}
+
+.details button:hover{
+    font-size: 18px;
+}
+
+.details .media-icon{
+    position: absolute;
+    bottom: 16px;
+    right: 15px;
+}
+
+.details .media-icon i{
+    display: inline-flex;
+    margin: 0 6px;
+    color: var(--contentBgColor);
+    opacity: 0.7;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.details .media-icon i.fb{
+    color: var(--fbColor);
+}
+
+.details .media-icon i.twit{
+    color: var(--twcolor);
+}
+
+.details .media-icon i.lind{
+    color: var(--lindColor);
+}
+
+.details .media-icon i.ins{
+    color: var(--insColor);
+}
+
+.details .media-icon i.whats{
+    color: var(--whatsColor);
+}
+
+.details .media-icon i:hover{
+    font-size: 25px;
+}
+
+#switch:checked ~ .outer .content .details .media-icon i{
+    color: var(--whiteColor);
+}
+
+#switch{
+    display: none;
+}
